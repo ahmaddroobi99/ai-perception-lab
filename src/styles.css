@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-display: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: #08090b;
+  --color-background: #08090b;
+  --color-surface: #101215;
+  --color-surface-2: #161a1f;
+  --color-fg: #e8edf2;
+  --color-foreground: #e8edf2;
+  --color-muted: #8b959e;
+  --color-muted-foreground: #8b959e;
+  --color-subtle: #5c656e;
+  --color-border: #22282f;
+  --color-input: #22282f;
+  --color-ring: #8eb8c9;
+  --color-primary: #8eb8c9;
+  --color-primary-foreground: #081014;
+  --color-secondary: #1a2026;
+  --color-secondary-foreground: #d5dde4;
+  --color-accent: #1a2229;
+  --color-accent-foreground: #e8edf2;
+  --color-card: #101215;
+  --color-card-foreground: #e8edf2;
+  --color-popover: #12161b;
+  --color-popover-foreground: #e8edf2;
+  --color-destructive: #d46a6a;
+  --color-ok: #5dba87;
+  --color-warn: #d4a054;
+  --color-danger: #d46a6a;
+  --color-info: #6ea8c9;
+  --color-chart-1: #8eb8c9;
+  --color-chart-2: #5dba87;
+  --color-chart-3: #d4a054;
+  --color-chart-4: #6ea8c9;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius: 12px;
+
+  --shadow-panel: 0 1px 0 rgba(232, 237, 242, 0.04), 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+html.light {
+  --color-bg: #f3f5f7;
+  --color-background: #f3f5f7;
+  --color-surface: #ffffff;
+  --color-surface-2: #eceff2;
+  --color-fg: #14181c;
+  --color-foreground: #14181c;
+  --color-muted: #5c656e;
+  --color-muted-foreground: #5c656e;
+  --color-subtle: #7a848e;
+  --color-border: #d5dce2;
+  --color-input: #d5dce2;
+  --color-ring: #3d6f86;
+  --color-primary: #3d6f86;
+  --color-primary-foreground: #f7fbfc;
+  --color-secondary: #e8eef2;
+  --color-secondary-foreground: #14181c;
+  --color-accent: #e4ebf0;
+  --color-accent-foreground: #14181c;
+  --color-card: #ffffff;
+  --color-card-foreground: #14181c;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #14181c;
+  --color-destructive: #b54545;
+  --color-ok: #2f8a5b;
+  --color-warn: #b07a28;
+  --color-danger: #b54545;
+  --color-info: #3d6f86;
+  --shadow-panel: 0 1px 0 rgba(20, 24, 28, 0.04), 0 12px 32px rgba(16, 22, 28, 0.08);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 35%, transparent);
+    color: var(--color-fg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.scanline {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    color-mix(in oklab, var(--color-fg) 3%, transparent) 50%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
