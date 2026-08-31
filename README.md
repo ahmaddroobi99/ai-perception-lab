@@ -210,3 +210,8 @@ Enable Pages → GitHub Actions in the repository settings.
 ## License
 
 MIT. Educational portfolio project.
+
+---
+
+Account grouping: research first, undergraduate last — see the [profile README](https://github.com/ahmaddroobi99/ahmaddroobi99). GitHub cannot custom-sort the Repositories tab.
+
