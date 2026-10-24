@@ -17,19 +17,3 @@ export function captureFrame(
   ctx.drawImage(video, 0, 0, cw, ch);
   return canvas.toDataURL("image/jpeg", quality);
 }
-
-export function captureFromFile(file: File, maxWidth = 960): Promise<HTMLImageElement> {
-  return new Promise((resolve, reject) => {
-    const url = URL.createObjectURL(file);
-    const img = new Image();
-    img.onload = () => {
-      URL.revokeObjectURL(url);
-      resolve(img);
-    };
-    img.onerror = () => {
-      URL.revokeObjectURL(url);
-      reject(new Error("Could not read that image."));
-    };
-    img.src = url;
-  });
-}

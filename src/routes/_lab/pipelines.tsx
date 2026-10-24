@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { PIPE_NODES, type PipeNode } from "@/data/pipeline";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CapabilityTag } from "@/components/shared/CapabilityTag";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
