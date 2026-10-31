@@ -120,6 +120,17 @@ npm run build
 npm run preview
 ```
 
+Checks:
+
+```bash
+npm run typecheck
+npm run lint
+npm test               # 16 template tests in scripts/ fail on a fresh clone (they expect the stock app-builder setup, e.g. the gitignored .grok/)
+npx vite build         # bundle only
+```
+
+`npm run build` also runs `db:migrate`, which applies database migrations when `DATABASE_URL` is set.
+
 ## How the mock / live data works
 
 - **Live detector metrics** are measured with `performance.now()` around the TFJS forward pass.
