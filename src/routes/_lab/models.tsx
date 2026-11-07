@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import { MODEL_CARDS, FRAMEWORK_ROLES } from "@/data/models";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { CapabilityTag } from "@/components/shared/CapabilityTag";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import type { ModelCard } from "@/data/models";
